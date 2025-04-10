@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiProfit: Real-Time Business Optimization Extension</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="app-title">OptiProfit</h1>
+        <p class="app-subtitle">Real-Time Business Optimization Extension</p>
+    </header>
+    
+    <div class="container">
+        <div class="dashboard-container">
+            <div class="error-detection">
+                <div class="panel-header">
+                    OptiProfit Error Detection
+                </div>
+                <div class="panel-content">
+                    <div class="error-alert">
+                        <h3>Error Detected: Order #38291</h3>
+                        <p>Blue T-shirt has been packed instead of the Red T-shirt that was ordered</p>
+                        <p>Action required before shipping</p>
+                    </div>
+                    
+                    <div class="order-details">
+                        <div class="order-info">
+                            <h3>Order Details</h3>
+                            <div class="customer-info">
+                                <div>Order #38291</div>
+                                <div>Customer: Michael Johnson</div>
+                                <div>Date: April 3, 2025</div>
+                                <div>Status: Packing</div>
+                            </div>
+                            <h4>Items:</h4>
+                            <div class="order-item">1x T-shirt (Red, Size M) - $24.99</div>
+                            <div class="order-item">1x Jeans (Blue, Size 32) - $49.99</div>
+                        </div>
+                        
+                        <div class="package-scan">
+                            <h3>Package Scan</h3>
+                            <div class="package-content">
+                                <div class="package-image">
+                                    <div class="blue-tshirt">BLUE T-SHIRT</div>
+                                </div>
+                                <div class="analysis-panel">
+                                    <div class="mismatch-alert">
+                                        <span>Color Mismatch</span>
+                                    </div>
+                                    <div class="analysis-details">
+                                        <div>Expected: Red T-shirt</div>
+                                        <div>Detected: Blue T-shirt</div>
+                                    </div>
+                                    <div class="confidence-rating">
+                                        Confidence: 98.7%
+                                    </div>
+                                    <div class="ai-recommendation">
+                                        <strong>AI Recommendation:</strong>
+                                        <div>Replace with correct item before shipping</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-success" id="fixItemBtn">Fix Item</button>
+                        <button class="btn btn-primary" id="overrideBtn">Override Check</button>
+                        <button class="btn btn-warning" id="skipItemBtn">Skip Item</button>
+                        <button class="btn btn-default" id="cancelBtn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard">
+                <div class="panel-header">
+                    OptiProfit Dashboard
+                    <span style="float: right; font-size: 14px;">Last 30 Days ▼</span>
+                </div>
+                <div class="panel-content">
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-title">Errors Prevented</div>
+                            <div class="stat-value errors" id="errorsCount">1,249</div>
+                            <div class="stat-change positive-change">+12.4%</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">Money Saved</div>
+                            <div class="stat-value money" id="moneySaved">$12,490</div>
+                            <div class="stat-change positive-change">+8.7%</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-title">Prevention Rate</div>
+                            <div class="stat-value rate" id="preventionRate">94.8%</div>
+                            <div class="stat-change positive-change">+1.2%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-errors">
+                        <div class="section-title">Recent Error Detections</div>
+                        
+                        <div class="error-entry">
+                            <div class="error-icon error-red"></div>
+                            <div class="error-details">
+                                <div class="error-title">Order #38291 - Color Mismatch</div>
+                                <div class="error-description">Blue T-shirt packed instead of Red T-shirt</div>
+                                <div class="error-time">Detected 12 minutes ago</div>
+                            </div>
+                            <div class="error-status status-fixed">FIXED</div>
+                        </div>
+                        
+                        <div class="error-entry">
+                            <div class="error-icon error-orange"></div>
+                            <div class="error-details">
+                                <div class="error-title">Order #38306 - Missing Item</div>
+                                <div class="error-description">Sunglasses missing from package</div>
+                                <div class="error-time">Detected 27 minutes ago</div>
+                            </div>
+                            <div class="error-status status-progress">IN PROGRESS</div>
+                        </div>
+                        
+                        <div class="error-entry">
+                            <div class="error-icon error-red"></div>
+                            <div class="error-details">
+                                <div class="error-title">Order #38317 - Extra Item</div>
+                                <div class="error-description">Extra phone case included in package</div>
+                                <div class="error-time">Detected 48 minutes ago</div>
+                            </div>
+                            <div class="error-status status-fixed">FIXED</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-bottom">
+                        <div class="error-types">
+                            <div class="section-title">Error Types</div>
+                            <div class="pie-chart"></div>
+                        </div>
+                        
+                        <div class="projected-savings">
+                            <div class="section-title">Projected Annual Savings</div>
+                            <div class="savings-amount">$149,880</div>
+                            <div class="savings-note">Based on current trends</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-description">
+            <h2>About OptiProfit</h2>
+            <div class="description-card">
+                <h3>Problem Statement</h3>
+                <p>In e-commerce and logistics, incorrect product deliveries erode profitability at an alarming rate. A mid-sized e-commerce firm loses $2M/year due to 500 daily misdeliveries ($10/order), while a leading food delivery platform loses $1.5M/year from order mix-ups and delays. These issues are compounded by operational bottlenecks costing $25M/year and revenue leaks from returns and over-discounting, totaling a $600B global market drain. Current solutions rely on manual checks or disconnected systems, lacking real-time precision and intervention, leaving businesses vulnerable to customer dissatisfaction and financial loss.</p>
+            </div>
+            
+            <div class="description-card">
+                <h3>Our Solution</h3>
+                <p>OptiProfit is an AI-powered browser extension that integrates seamlessly with business platforms (e.g., order dashboards, seller tools) to detect and prevent incorrect product deliveries in real-time. Leveraging computer vision, it scans package contents against order details, flagging mismatches (e.g., "Order #123: Wrong item—Red Shirt vs. Blue Shirt"). It predicts high-risk error zones (e.g., "6 PM rush: 20% error likelihood") and suggests instant actions (e.g., "Redirect to warehouse," "Offer $5 credit"), recovering leaks (e.g., "v1.1 saves $15/order"). A mini-dashboard tracks savings (e.g., "Saved $500 today"), delivering $4.5M/year for food delivery and $3M/year for e-commerce logistics firms. Tailored for Accenture's $600B market consulting portfolio, it's a game-changing, client-ready tool.</p>
+            </div>
+            
+            <div class="description-card">
+                <h3>Key Features</h3>
+                <ul class="feature-list">
+                    <li>Real-time error detection using AI computer vision</li>
+                    <li>Seamless integration with existing business platforms</li>
+                    <li>Predictive analytics for error prevention</li>
+                    <li>Customizable alert thresholds and action recommendations</li>
+                    <li>Detailed savings tracking and ROI reporting</li>
+                    <li>User-friendly interface with minimal training required</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>OptiProfit</h3>
+                <p>Real-Time Business Optimization Extension</p>
+                <p>© 2025 OptiWizards</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@optiwizards.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

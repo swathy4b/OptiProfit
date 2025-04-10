@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OptiProfit Demo</title>
+  <style>
+    body { width: 300px; font-family: Arial; }
+    button { margin: 10px 0; padding: 8px; width: 100%; }
+    .alert { background: #ffebee; border-left: 4px solid #d32f2f; padding: 10px; margin: 10px 0; }
+    .warning { background: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h2>OptiProfit Demo</h2>
+  <div id="orderPanel">
+    <div class="alert" id="riskAlert" style="display:none">
+      <strong>High Risk Order!</strong><br>
+      Order #FL39475<br>
+      Risk Score: <span id="riskScore">78%</span>
+    </div>
+    <button id="scanButton">Scan Current Order</button>
+    <button id="showSettingsButton">Show Settings</button>
+  </div>
+  <div id="settingsPanel" style="display:none">
+    <h3>Settings</h3>
+    <div>
+      <label><input type="checkbox" checked> Auto-detect risky orders</label><br>
+      <label><input type="checkbox" checked> Show notifications</label><br>
+      <label>Risk threshold: <input type="range" min="10" max="90" value="20"></label>
+    </div>
+    <button id="backButton">Back to Scanner</button>
+  </div>
+  
+  <script>
+    document.getElementById('scanButton').addEventListener('click', function() {
+      document.getElementById('riskAlert').style.display = 'block';
+      // Simulate processing
+      setTimeout(() => {
+        chrome.action.setBadgeText({text: '!'});
+        chrome.action.setBadgeBackgroundColor({color: '#d32f2f'});
+      }, 1000);
+    });
+    
+    document.getElementById('showSettingsButton').addEventListener('click', function() {
+      document.getElementById('orderPanel').style.display = 'none';
+      document.getElementById('settingsPanel').style.display = 'block';
+    });
+    
+    document.getElementById('backButton').addEventListener('click', function() {
+      document.getElementById('settingsPanel').style.display = 'none';
+      document.getElementById('orderPanel').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
